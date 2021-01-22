@@ -4,20 +4,26 @@ import argparse
 
 def main (args):
 
+	# Open the video file
 	cap = cv2.VideoCapture(args.vid_path)
+	
+	# get the name of video file.
 	vid_id = args.vid_path.split('/')[-1].split('.')[0]
 
 	count = 1
 	ret, frame = cap.read()
 
+	# Get frames until there are no more frames to be read from the file.
 	while(ret):
-
+		
+		# Setup the file_name for output image
 		file_name = f"{vid_id}_{count}.jpg"
 		file_path = f"{args.out_path}/{file_name}"
 		print(file_path)
 
 		cv2.imwrite(file_path, frame)
 
+		# Skip n frames
 		while count % args.n != 0:
 			count += 1
 			ret, frame = cap.read()
@@ -33,6 +39,7 @@ if __name__ == "__main__":
 
 	args = argpar.parse_args()
 
+	# Check if the paths supplied exist
 	if(not os.path.exists(args.vid_path)):
 		print(f"[!] {args.vid_path}: File does not exist")
 		exit(0)
