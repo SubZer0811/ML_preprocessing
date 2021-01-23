@@ -5,3 +5,8 @@ This repository holds some scripts and python notebooks that have helped me to p
 ### extract_frames.py
 
 This script takes a video file as input and saves 1 frame per `n` frames. `--n` is a user input. Depending on the number of images required, this number can be tweaked. The default value has been set to `10`.
+
+#### Running 
+```
+python3 extract_frames <path-to-video> <path-to-output-folder> --n <N>
+```
