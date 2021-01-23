@@ -10,3 +10,6 @@ This script takes a video file as input and saves 1 frame per `n` frames. `--n` 
 ```
 python3 extract_frames <path-to-video> <path-to-output-folder> --n <N>
 ```
+
+### Preprocessing data
+Open the preprocessing.ipynb file. This file contains code and documentation on usage.
